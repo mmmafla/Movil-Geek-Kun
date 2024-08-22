@@ -1,2 +1,2 @@
-# Movil-NameProyect
-Repositorio de "Programación de Aplicaciones Moviles" / Proyecto semestral - "NameProyect". 
+# Movil-Geek-Kun
+Repositorio de "Programación de Aplicaciones Moviles" / Proyecto semestral - "Geek-Kun". 
