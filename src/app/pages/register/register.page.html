@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro de cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    
+    <!-- :::  ::: -->
+    <ion-card-header>
+      <ion-card-title>Ingrese datos</ion-card-title>      
+    </ion-card-header>
+
+    <!-- ::: Campos de ingreso de datos ::: -->
+    <ion-card-content>
+      <ion-item> <!-- ::: Dato: Nombre ::: -->
+        <ion-input label="Nombre" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item> <!-- ::: Dato: Apellido ::: -->
+        <ion-input label="Apellido" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item> <!-- ::: Dato: Usuario ::: -->
+        <ion-input label="Nickname" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item> <!-- ::: Dato: Correo ::: -->
+        <ion-input label="Correo" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item> <!-- ::: Dato: Contraseña ::: -->
+        <ion-input label="Contraseña" labelPlacement="floating"></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-button expand="block" [routerLink]="['/home']">Registrarse</ion-button>
+
+  </ion-card>
+
+</ion-content>
