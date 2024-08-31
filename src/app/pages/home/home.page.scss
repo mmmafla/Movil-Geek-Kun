@@ -1,38 +1,15 @@
-#container {
-  text-align: center;
+$color1: #191747;
+$color2: #e2dfed;
+$color3: #474593;
+$color4: #7071ba;
+$color5: #8495c6;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-button[slot='fixed'] {
+#btn-scroll {
+  --border-radius: 100%;
+  --background: black;
+  --color: $color4;
+  position: fixed;
   bottom: 10%;
   right: 20px;
-}
-
-ion-tabs {
-  position: fixed; /* Fija el tabs en la parte inferior */
-  bottom: 0; /* Pegado a la parte inferior */
-  width: 100%; /* Asegura que ocupe todo el ancho */
 }

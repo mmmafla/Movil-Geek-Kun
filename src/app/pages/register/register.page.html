@@ -1,37 +1,50 @@
+<!--
+  La 'register.page' es donde se solicitan datos para la creación de una cuenta.
+  Se presentaran 5 campos de datos y 1 botón.
+  Cada campo pedira su respectivo, el botón llevara a la 'home.page' una vez que los campos de datos se hayan completado.
+-->
+
 <ion-header [translucent]="true">
+
   <ion-toolbar>
     <ion-title>Registro de cuenta</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
   <ion-card>
     
-    <!-- :::  ::: -->
     <ion-card-header>
       <ion-card-title>Ingrese datos</ion-card-title>      
     </ion-card-header>
 
-    <!-- ::: Campos de ingreso de datos ::: -->
     <ion-card-content>
-      <ion-item> <!-- ::: Dato: Nombre ::: -->
+
+      <ion-item> <!-- <> Campo de dato: Nombre <> -->
         <ion-input label="Nombre" labelPlacement="floating"></ion-input>
       </ion-item>
-      <ion-item> <!-- ::: Dato: Apellido ::: -->
+
+      <ion-item> <!-- <> Campo de dato: Apellido <> -->
         <ion-input label="Apellido" labelPlacement="floating"></ion-input>
       </ion-item>
-      <ion-item> <!-- ::: Dato: Usuario ::: -->
+
+      <ion-item> <!-- <> Campo de dato: Usuario <> -->
         <ion-input label="Nickname" labelPlacement="floating"></ion-input>
       </ion-item>
-      <ion-item> <!-- ::: Dato: Correo ::: -->
+
+      <ion-item> <!-- <> Campo de dato: Correo <> -->
         <ion-input label="Correo" labelPlacement="floating"></ion-input>
       </ion-item>
-      <ion-item> <!-- ::: Dato: Contraseña ::: -->
+
+      <ion-item> <!-- <> Campo de dato: Contraseña <> -->
         <ion-input label="Contraseña" labelPlacement="floating"></ion-input>
       </ion-item>
+
     </ion-card-content>
 
+    <!-- <> Botón para registrarse <> -->
     <ion-button expand="block" [routerLink]="['/home']">Registrarse</ion-button>
 
   </ion-card>
