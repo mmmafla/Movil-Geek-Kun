@@ -1,3 +1,29 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home">
+      <ion-icon name="newspaper"></ion-icon>Noticias
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" [routerLink]="['/tienda']">
+      <ion-icon name="cart"></ion-icon>Tienda
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" [routerLink]="['/salvarmundo']">
+      <ion-icon name="skull"></ion-icon>Salvar al mundo
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings-sharp"></ion-icon>Configuración
+    </ion-tab-button>
+
+    <!-- <> En caso de que se pida subir algo, se utilizara este botón <>
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings-sharp"></ion-icon>Configuración
+    </ion-tab-button>
+    -->
+
+  </ion-tab-bar>
+
+</ion-tabs>
