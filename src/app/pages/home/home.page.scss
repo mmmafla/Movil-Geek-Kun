@@ -13,3 +13,18 @@ $color5: #8495c6;
   bottom: 10%;
   right: 20px;
 }
+
+ion-card {
+  position: relative;
+  overflow: hidden; // Importante para que el fondo animado no se desborde
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); // Ajusta el color de fondo como prefieras
+  z-index: -1; // Mantiene el fondo detrás del contenido
+}
