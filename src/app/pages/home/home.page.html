@@ -1,111 +1,21 @@
 <!--
-  La 'home.page' es la vista principal de la aplicación, donde se puede acceder a las multifuncionalidades de esta.
-  Se presentaran 5 apartados: "Cuenta", "Noticias", "Tienda", "Salvar al mundo", y "Configuración".
+  La 'home.page' es donde se iniciara la aplicación una vez se alla descargado o una vez se alla cerrado sesión.
+  Se presentaran 2 opciones, las cuales son: 'Iniciar Sesión' y 'Registrarse'.
+  Cada opción llevara a su respectiva vista. 
 -->
 
-<ion-header collapse="condense">
-
-  <ion-toolbar>
-    <ion-buttons slot="secondary">
-      <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
-
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-  <ion-card>
-    <div class="card-background" #homeCardBg></div>
-    <img alt="" src="https://pbs.twimg.com/media/GWLrPAOWsAEE6iC?format=jpg&name=900x900" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
+<ion-content id="background-app" [fullscreen]="true">
   
-    <ion-card-content>
-      Hemos solucionado un problema de la tienda por el que el paquete Chatarra Candente mostraba 
-      incorrectamente el paquete Construcción Natural para algunos jugadores.
-      Cualquiera que haya comprado por error el paquete Chatarra Candente lo conservará, 
-      y también recibirá el paquete Construcción Natural en los próximos días.
-    </ion-card-content>
+  <div id="container-btn">
 
-  </ion-card>
+    <img src="assets/img/icon-fortnite.jpg" alt="">
 
-  <ion-card>
+    <!-- ::: Botón 'Iniciar Sesión' ::: -->
+    <ion-button id="btn-login" expand="block" [routerLink]="['/login']">Iniciar Sesión</ion-button>
 
-    <img alt="" src="https://pbs.twimg.com/media/GV_l7fRXcAEG7Wc?format=jpg&name=small" />
+    <!-- ::: Botón 'Registrarse' ::: -->
+    <ion-button id="btn-register" expand="block" [routerLink]="['/register']">Registrarse</ion-button>
 
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Las apariencias engañan...🤭
-      Dalila llega al Club de Fortnite para septiembre.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GVtJmTCXUAARrG_?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      No hay palabras que describan lo genial que es este atuendo 😎.
-      Araña de Hierro ha entrado en la tienda de articulos.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GVGM0xYW0AE2TV-?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Ha habido un error con el Lote de equipamiento de Dragon Ball en la tienda donde se mostraba incorrectamente 
-      el Ala delta Nube voladora como parte de la oferta. Se ha retirado de la tienda mientras investigamos.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GVGE3o2XAAAyZcM?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Olvida el bien y el mal. ¡Simplemente provoca el caos!
-      Aunque ten cuidado con Doom... parece bastante malo - ¡ALERTA DOOM YA DISPONIBLE!
-    </ion-card-content>
-
-  </ion-card>
-
-  <!-- <> Botón para volver al encabezado de la vista <> -->
-  <ion-button id="btn-scroll" (click)="scrollToTop()"><ion-icon name="arrow-up"></ion-icon></ion-button>
+  </div>
 
 </ion-content>

@@ -1,30 +1,7 @@
-$color1: #191747;
-$color2: #e2dfed;
-$color3: #474593;
-$color4: #7071ba;
-$color5: #8495c6;
-
-
-#btn-scroll {
-  --border-radius: 100%;
-  --background: black;
-  --color: $color4;
-  position: fixed;
-  bottom: 10%;
-  right: 20px;
+#background-app {
+    --background: url('/assets/img/fortnite_background_game.jpg') no-repeat center;
 }
 
-ion-card {
-  position: relative;
-  overflow: hidden; // Importante para que el fondo animado no se desborde
-}
-
-.card-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1); // Ajusta el color de fondo como prefieras
-  z-index: -1; // Mantiene el fondo detrás del contenido
+#btn-login, #btn-register {
+    --color: white;
 }
