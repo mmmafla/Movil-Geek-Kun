@@ -22,89 +22,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of newsItems">
+        <ion-card>
+          <!-- Imagen del artículo -->
+          <ion-card-header>
+            <h6>{{ item.tabTitle }}</h6>
+            <ion-card-title>{{ item.title}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <!-- Imagen del artículo -->
+            <ion-img [src]="item.image || 'assets/default-image.png'"></ion-img>
+
+            <!-- Información del artículo -->
+            <div class="item-details">
+             <p>{{ item.body }}</p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GWLrPAOWsAEE6iC?format=jpg&name=900x900" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Hemos solucionado un problema de la tienda por el que el paquete Chatarra Candente mostraba 
-      incorrectamente el paquete Construcción Natural para algunos jugadores.
-      Cualquiera que haya comprado por error el paquete Chatarra Candente lo conservará, 
-      y también recibirá el paquete Construcción Natural en los próximos días.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GV_l7fRXcAEG7Wc?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Las apariencias engañan...🤭
-      Dalila llega al Club de Fortnite para septiembre.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GVtJmTCXUAARrG_?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      No hay palabras que describan lo genial que es este atuendo 😎.
-      Araña de Hierro ha entrado en la tienda de articulos.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GVGM0xYW0AE2TV-?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Ha habido un error con el Lote de equipamiento de Dragon Ball en la tienda donde se mostraba incorrectamente 
-      el Ala delta Nube voladora como parte de la oferta. Se ha retirado de la tienda mientras investigamos.
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GVGE3o2XAAAyZcM?format=jpg&name=small" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>[Fecha]</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Olvida el bien y el mal. ¡Simplemente provoca el caos!
-      Aunque ten cuidado con Doom... parece bastante malo - ¡ALERTA DOOM YA DISPONIBLE!
-    </ion-card-content>
-
-  </ion-card>
-
   <!-- <> Botón para volver al encabezado de la vista <> -->
   <ion-button id="btn-scroll" (click)="scrollToTop()"><ion-icon name="arrow-up"></ion-icon></ion-button>
 
