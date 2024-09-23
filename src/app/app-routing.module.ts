@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'reset-p',
     loadChildren: () => import('./pages/reset-p/reset-p.module').then( m => m.ResetPPageModule)
   },
+  {
+    path: 'tab-componet',
+    loadChildren: () => import('./pages/tab-componet/tab-componet.module').then( m => m.TabComponetPageModule)
+  },
 ];
 
 @NgModule({
