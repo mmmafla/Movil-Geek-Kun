@@ -11,11 +11,11 @@ import { ToastController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
 
   register:any={
-    name:"",
-    lastName:"",
-    user:"",
-    mail:"",
-    password:""
+    Nombre:"",
+    Apellido:"",
+    Usuario:"",
+    Correo:"",
+    Contrasena:""
   }
   
   field:string="";
@@ -37,8 +37,8 @@ export class RegisterPage implements OnInit {
 
   registrar(){
     if(this.validateModel(this.register)){
-      this.router.navigate(['/news']);
-      this.presentToast("top","¡Bienvenido [usuario]! No te pierdas las ultimas noticias, la tienda de articulos y las alerta de misiones de STW.",5000)
+      this.router.navigate(['/tab-componet/news']);
+      this.presentToast("top","¡Bienvenido! No te pierdas las ultimas noticias, la tienda de articulos y las alerta de misiones de STW.",5000)
     }else{
       this.presentToast("middle","Falta ingresar un dato en el campo de: "+this.field);
     }    

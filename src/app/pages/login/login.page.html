@@ -25,17 +25,17 @@
 
       <ion-item>
         <!-- <> Campo de dato: Usuario <> -->
-        <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="login.user" ></ion-input>
+        <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="login.Usuario" ></ion-input>
       </ion-item>
 
       <ion-item>
         <!-- <> Campo de dato: Contraseña <> -->
-        <ion-input label="Password" labelPlacement="floating" type="password" [(ngModel)]="login.password" ></ion-input>
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="login.Contrasena" ></ion-input>
       </ion-item>
 
       <!-- <> Botones con sus respectivas opcines <> -->
       <ion-button expand="block" (click)="ingresar()">Iniciar Sesión</ion-button>
-      <ion-button expand="block" [routerLink]="['/reset-p']">Recuperar Contraseña</ion-button>
+      <ion-button expand="block">Recuperar Contraseña</ion-button>
 
     </ion-card-content>
 
