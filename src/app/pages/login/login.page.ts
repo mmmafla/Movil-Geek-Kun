@@ -7,44 +7,38 @@ import { ToastController } from '@ionic/angular';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
-  //modelo login que permita obtener la info. de usuario y password
+
   login:any={
-    usuario:"",
+    user:"",
     password:""
   }
-  //variable para obtener el nombre del campo vacío
+
   field:string="";
+
   constructor(public router: Router,public toastController:ToastController) { }
 
   ngOnInit() {
   }
 
-  ingresar(){
-    if(this.validateModel(this.login)){
-      this.router.navigate(['/home']);
-      this.presentToast("top","Bienvenido",5000)
-    }else{
-      this.presentToast("middle","Error - Falta: "+this.field);
-    }    
-  }
-
-  /**
-   * validateModel para validar el ingreso de algo en los
-   * campos de mi html mediante el modelo login
-   */
   validateModel(model:any){
-    //Recorro todas las entradas que me entrega el Object entries obteniendo
-    //el par key : value
     for(var [key ,value] of Object.entries(model)){
-      //reviso si value = "" y retorno false e indico campo faltante
       if(value == ""){
         this.field = key;
         return false;
       }
     } 
-    //si termina el for es que los valores fueron ingresados
     return true;
+  }
+
+  ingresar(){
+    if(this.validateModel(this.login)){
+      this.router.navigate(['/tab-componet/news']);
+      this.presentToast("top","¡Bienvenido! No te pierdas las ultimas noticias, la tienda de articulos y las alerta de misiones de STW.",5000)
+    }else{
+      this.presentToast("middle","Falta ingresar un dato en el campo de: "+this.field);
+    }    
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, duration?:number) {
@@ -53,7 +47,6 @@ export class LoginPage implements OnInit {
       duration: duration?duration:2500,
       position: position,
     });
-
     await toast.present();
   }
 

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { ResetPPageRoutingModule } from './reset-p-routing.module';
 
-import { HomePage } from './home.page';
+import { ResetPPage } from './reset-p.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    ResetPPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [ResetPPage]
 })
-export class HomePageModule {}
+export class ResetPPageModule {}
