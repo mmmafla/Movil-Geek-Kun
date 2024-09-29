@@ -27,8 +27,6 @@ export class ShopPage implements OnInit {
       this.btr = this.shopItems.filter(item => item.brItems);
       console.log(this.shopItems);
       console.log(this.bundle);
-      console.log(this.btr);
-      console.log(this.jam);
 
     });
   }
