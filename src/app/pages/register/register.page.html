@@ -1,7 +1,7 @@
 <!--
   La 'register.page' es donde se solicitan datos para la creación de una cuenta.
   Se presentaran 5 campos de datos y 1 botón.
-  Cada campo pedira su respectivo, el botón llevara a la 'news.page' una vez que los campos de datos se hayan completado.
+  Cada campo pedira su respectivo, el botón llevara a la 'home.page' una vez que los campos de datos se hayan completado.
 -->
 
 <ion-header [translucent]="true">
@@ -45,7 +45,7 @@
     </ion-card-content>
 
     <!-- <> Botón para registrarse <> -->
-    <ion-button expand="block" (click)="registrar()">Registrarse</ion-button>
+    <ion-button expand="block" [routerLink]="['/home']">Registrarse</ion-button>
 
   </ion-card>
 

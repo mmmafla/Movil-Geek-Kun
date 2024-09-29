@@ -1,7 +1,15 @@
-#background-app {
-    --background: url('/assets/img/fortnite_background_game.jpg') no-repeat center;
-}
+$color1: #191747;
+$color2: #e2dfed;
+$color3: #474593;
+$color4: #7071ba;
+$color5: #8495c6;
 
-#btn-login, #btn-register {
-    --color: white;
+
+#btn-scroll {
+  --border-radius: 100%;
+  --background: black;
+  --color: $color4;
+  position: fixed;
+  bottom: 10%;
+  right: 20px;
 }
