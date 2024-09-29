@@ -1,0 +1,16 @@
+ion-content {
+    --background: var(--light-mode-backgound-color);
+}
+
+#btn-scroll {
+    --background: black;
+    --color: var(--primary-color);
+    --border-radius: 25%;
+    position: fixed;
+    bottom: 0.2rem;
+    right: 0.2rem;
+}
+
+#btn-icon {
+    --color: var(--primary-color);
+}

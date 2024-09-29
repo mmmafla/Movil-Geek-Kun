@@ -9,21 +9,27 @@ import { FortniteService } from 'src/app/services/fortnite.service';
 })
 export class ShopPage implements OnInit {
 
-  shopItems: any[] = []; // Artículos con imagen
-  filteredItems: any[] = []; // Artículos que tienen imagen
+  shopItems: any[]=[]; 
+  bundle: any[] = [];
+  seccion: any [] = [];
+  btr: any [] = [];
+  jam: any [] = [];
 
   constructor(private fortniteService: FortniteService) { }
 
   ngOnInit() {
-    this.fortniteService.getShopItems().subscribe(
-      response => {
-        this.shopItems = response.data.entries;
-        this.filteredItems = this.shopItems.filter(item => item.bundle?.image);
-        console.log(this.filteredItems); // Para depuración
-      },
-      error => {
-        console.error('Error al obtener los artículos de la tienda', error);
-      }
-    );
+    
+    this.fortniteService.getShopItems().subscribe((data: any) =>{
+      this.shopItems = data.data.entries;
+      this.bundle = this.shopItems.filter(item => item.bundle?.image);
+      this.seccion = this.shopItems.filter(item => item.layout.id == 'ChampionsRoad');
+      this.jam = this.shopItems.filter(item => item.layout.name =='Jam Tracks');
+      this.btr = this.shopItems.filter(item => item.brItems);
+      console.log(this.shopItems);
+      console.log(this.bundle);
+      console.log(this.btr);
+      console.log(this.jam);
+
+    });
   }
 }

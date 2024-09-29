@@ -1,33 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonContent } from '@ionic/angular';
-import { FortniteService  } from 'src/app/services/fortnite.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
-  @ViewChild(IonContent) content!: IonContent;
-  
-  newsItems: any[] = [];
+export class HomePage implements OnInit {
 
-  constructor(private fortniteService: FortniteService) {}
+  constructor() { }
 
   ngOnInit() {
-    this.fortniteService.getNews().subscribe(
-      response => {
-          this.newsItems = response.news; // Asignamos la lista de noticias
-          console.log(this.newsItems); // Para depuración
-      },
-      error => {
-        console.error('Error al cargar las noticias', error);
-      }
-    );
   }
-  scrollToTop() {
-    this.content.scrollToTop(500);
-  }
+
 }
-
-

@@ -1,0 +1,127 @@
+<!--
+  La 'news.page' es la vista principal al inciar sesión, donde se muestran las ultimas noticias recientes.
+  Dentro de esta misma vista se puede acceder a las multifuncionalidades de esta.
+  Se presentaran 5 apartados: "Cuenta", "Noticias", "Tienda", "Salvar al mundo", y "Configuración".
+-->
+
+<ion-header collapse="condense">
+
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button id="btn-icon">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button id="btn-icon">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <div class="card-background" #homeCardBg></div>
+    <img alt="" src="https://pbs.twimg.com/media/GYFffiKWkAANbwJ?format=jpg&name=900x900" />
+
+    <ion-card-header>
+      <ion-card-title>Fortnite</ion-card-title>
+      <ion-card-subtitle>Septiembre 22, 2024</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Así que... Muchas. Escaleras. Pero ¡qué vistas!
+      El Kit de LEGO del Vecindario espectacular ya está disponible en la tienda: http://fn.gg/FriendlyNeighborhood
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <img alt="" src="https://pbs.twimg.com/media/GYCiUeJXcAA5viV?format=jpg&name=900x900" />
+
+    <ion-card-header>
+      <ion-card-title>Fortnite</ion-card-title>
+      <ion-card-subtitle>Septiembre 21, 2024</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      ¡Mastica esto!
+      Espera, no, no literalmente. Por favor, no muerdas al oso.
+      Líder del equipo golosina ya está a la venta: http://fn.gg/GummiTeamLeader
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <img alt="" src="https://pbs.twimg.com/media/GYAw6XYWEAA7ZKc?format=jpg&name=small" />
+
+    <ion-card-header>
+      <ion-card-title>Fortnite</ion-card-title>
+      <ion-card-subtitle>Septiembre 21, 2024</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      ¡Empezamos! La Copa de Ídolos de Rubius ya está en marcha.
+      Reglas: http://fn.gg/RubiusIconCup-Rules
+      Detalles: http://fn.gg/RubiusIconCup
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <img alt="" src="https://pbs.twimg.com/media/GX9YPUQWkAAEMhW?format=jpg&name=900x900" />
+
+    <ion-card-header>
+      <ion-card-title>Fortnite</ion-card-title>
+      <ion-card-subtitle>Septiembre 20, 2024</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Siempre atento a lo último sobre cierto Lanzatelarañas . 
+      El Kit LEGO de El Clarín ya está disponible en la Tienda: https://fn.gg/TheDailyBugle
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <img alt="" src="https://pbs.twimg.com/media/GX80-vtXkAATeAW?format=jpg&name=900x900" />
+
+    <ion-card-header>
+      <ion-card-title>Fortnite</ion-card-title>
+      <ion-card-subtitle>Septiembre 20, 2024</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Con el lanzamiento de un nuevo parche en Xbox Series X, 
+      los problemas de estabilidad se han resuelto y vuelven a la normalidad. ¡Nos vemos en el juego!
+    </ion-card-content>
+
+  </ion-card>
+
+<ion-grid *ngFor="let item of newsItems">
+  <ion-card>
+    <ion-card-header>
+      <h6>{{ item.tabTitle }}</h6>
+        <ion-card-title>{{ item.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-img [src]="item.image || 'assets/default-image.png'"></ion-img>
+        <div class="item-details">
+          <p>{{ item.body }}</p>
+        </div>
+    </ion-card-content>
+  </ion-card>
+</ion-grid>
+
+<!-- <> Botón para volver al encabezado de la vista <> -->
+<ion-button id="btn-scroll" (click)="scrollToTop()"><ion-icon name="arrow-up"></ion-icon></ion-button>
+
+</ion-content>

@@ -3,33 +3,49 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: '',
-    redirectTo: 'main',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'main',
-    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
-  },
-  {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'tienda',
-    loadChildren: () => import('./pages/tienda/tienda.module').then( m => m.TiendaPageModule)
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then( m => m.UserPageModule)
   },
   {
-    path: 'salvarmundo',
-    loadChildren: () => import('./pages/salvarmundo/salvarmundo.module').then( m => m.SalvarmundoPageModule)
+    path: 'news',
+    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
+  },
+  {
+    path: 'shop',
+    loadChildren: () => import('./pages/shop/shop.module').then( m => m.ShopPageModule)
+  },
+  {
+    path: 'stw',
+    loadChildren: () => import('./pages/stw/stw.module').then( m => m.StwPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'reset-p',
+    loadChildren: () => import('./pages/reset-p/reset-p.module').then( m => m.ResetPPageModule)
+  },
+  {
+    path: 'tab-componet',
+    loadChildren: () => import('./pages/tab-componet/tab-componet.module').then( m => m.TabComponetPageModule)
   },
 ];
 

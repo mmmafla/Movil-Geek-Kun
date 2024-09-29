@@ -9,36 +9,53 @@
   <ion-card>
 
     <ion-card-content>
-      La tienda de articulos trae diversos articulos diarios, no te pierdas de ninguno. 
+      La tienda de articulos trae diversos articulos diarios, no te pierdas de ninguno.
       La tienda se actualiza a las 09:00 p.m. hora Chile.
     </ion-card-content>
 
   </ion-card>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of filteredItems">
-        <ion-card>
-          <!-- Imagen del artículo -->
-          <ion-card-header>
-            <ion-card-title>{{ item.bundle.name }}</ion-card-title>
-          </ion-card-header>
+  <ion-card *ngFor="let item of bundle">
+    <ion-img [src]="item.bundle?.image"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ item.bundle?.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let btw of item.brItems">
+        <ion-thumbnail slot="start">
+          <img alt="icon" [src]="btw.images.icon" />
+        </ion-thumbnail>
+        <ion-label>{{ btw.name }}</ion-label>
+        <div class="item-details">
+          <ion-label>Precio regular: {{ item.regularPrice }} V-Bucks</ion-label>
+          <p></p>
+          <ion-label>Precio final: {{ item.finalPrice }} V-Bucks </ion-label>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
-          <ion-card-content>
-            <!-- Imagen del artículo -->
-            <ion-img [src]="item.bundle?.image || 'assets/default-image.png'"></ion-img>
+  <ion-card *ngFor="let item of seccion">
+    <div *ngFor="let btw of item.brItems">
+      <ion-thumbnail slot="start">
+        <img alt="icon" [src]="btw.images.icon" />
+      </ion-thumbnail>
+    </div>
+    <div *ngFor="let btw of item.brItems">
+      <ion-label>{{ btw.name }}</ion-label>
+      <p></p>
+    </div>
+    <div class="item-details">
+      <ion-label>Precio regular: {{ item.regularPrice }} V-Bucks</ion-label>
+      <p></p>
+      <ion-label>Precio final: {{ item.finalPrice }} V-Bucks </ion-label>
+    </div>
+  </ion-card>
 
-            <!-- Información del artículo -->
-            <div class="item-details">
-              <p>Precio regular: {{ item.regularPrice }} V-Bucks</p>
-              <p>Precio final: {{ item.finalPrice }} V-Bucks</p>
-            </div>
-            
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+
+
+
 
 
 </ion-content>
