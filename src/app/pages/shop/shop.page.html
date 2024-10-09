@@ -24,65 +24,62 @@
 
   </ion-card>
 
-  <ion-card>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col sizeMd="3" size="12" *ngFor="let item of bundle">
+          <h1>{{ item.layout.name }}</h1>
+          <ion-card>
+            <ion-img [src]="item.bundle?.image"></ion-img>
+            <ion-card-header>
+              <ion-card-title>{{ item.bundle?.name }}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
 
-    <ion-card-header>
+          <ion-row>
+            <ion-col sizeMd="4" size="6" *ngFor="let btw of item.brItems">
+              <ion-card>
+                <ion-img *ngIf="btw.images.featured; else iconTemplate" [src]="btw.images.featured"></ion-img>
+                <ng-template #iconTemplate>
+                  <ion-img [src]="btw.images.icon"></ion-img>
+                </ng-template>
 
-      <ion-card-title>Deadpool & Wolverine</ion-card-title>
-      <ion-card-subtitle>Lote de Deadpool & Wolverine: 3600 V-Bucks</ion-card-subtitle>
+                <ion-card-content>
+                  <ion-label>{{ btw.name }}</ion-label>
+                  <div class="item-details">
+                    <ion-label>Precio regular: {{ item.regularPrice }} V-Bucks</ion-label>
+                    <p></p>
+                    <ion-label>Precio final: {{ item.finalPrice }} V-Bucks </ion-label>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
 
-    </ion-card-header>
-
-    <ion-card-content>
-
-      <ion-list>
-
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ucs-images.fortnite.com/blobs/63/30/c3ee-72e8-4f03-80e6-10f81f74656f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2SBBZFECCYQWRK6G%2F20240924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240924T020605Z&X-Amz-Expires=90000&X-Amz-Signature=8ad73981fdb9258ce1f52f0a958a6a2b7c948dc417b20144e7f7c44953c3b795&X-Amz-SignedHeaders=host&response-content-disposition=inline%3Bfilename%3D%22file.png%22%3Bfilename%2A%3DUTF-8%27%27input-lg.png&x-id=GetObject" />
-          </ion-thumbnail>
-          <ion-label>Wolverine (A pluma y tinta)</ion-label>
-        </ion-item>
-  
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ucs-images.fortnite.com/blobs/8e/c4/62de-d4e6-4ac3-8702-7b221d6696c9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2SBBZFECCYQWRK6G%2F20240924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240924T020603Z&X-Amz-Expires=90000&X-Amz-Signature=01375c8967dce0b24811cf8bae30356a49b04fee3b64d5cf3f313e1291959072&X-Amz-SignedHeaders=host&response-content-disposition=inline%3Bfilename%3D%22file.png%22%3Bfilename%2A%3DUTF-8%27%27input-lg.png&x-id=GetObject" />
-          </ion-thumbnail>
-          <ion-label>Globo de Wolverine</ion-label>
-        </ion-item>
-  
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ucs-images.fortnite.com/blobs/18/92/204f-95f2-407e-bb1a-4c164a92d08f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2SBBZFECCYQWRK6G%2F20240924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240924T020603Z&X-Amz-Expires=90000&X-Amz-Signature=96cda8cd33e5653b8f766013e02a3c8bb3eea92bfe9a181b2b852cb433d1a7f0&X-Amz-SignedHeaders=host&response-content-disposition=inline%3Bfilename%3D%22file.png%22%3Bfilename%2A%3DUTF-8%27%27input-lg.png&x-id=GetObject" />
-          </ion-thumbnail>
-          <ion-label>Hacha de Wolverine</ion-label>
-        </ion-item>
-  
-        <ion-item lines="none">
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ucs-images.fortnite.com/blobs/72/6e/0944-fbff-4e1b-afeb-5707f455cc0f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2SBBZFECCYQWRK6G%2F20240924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240924T020603Z&X-Amz-Expires=90000&X-Amz-Signature=c9331070d761c28c2197c598bc1791ead7f510c51b7e701b2b711e7366b4873b&X-Amz-SignedHeaders=host&response-content-disposition=inline%3Bfilename%3D%22file.png%22%3Bfilename%2A%3DUTF-8%27%27input-lg.png&x-id=GetObject" />
-          </ion-thumbnail>
-          <ion-label>Deadpool (A pluma y tinta)</ion-label>
-        </ion-item>
-
-        <ion-item lines="none">
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ucs-images.fortnite.com/blobs/4f/ea/2453-ad49-410d-9a49-e6b1d23840e2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2SBBZFECCYQWRK6G%2F20240924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240924T020605Z&X-Amz-Expires=90000&X-Amz-Signature=f50da9cdb55be529958b7ee9e3baf4873cc64de57e407c028eedf6a557cf5fb0&X-Amz-SignedHeaders=host&response-content-disposition=inline%3Bfilename%3D%22file.png%22%3Bfilename%2A%3DUTF-8%27%27input-lg.png&x-id=GetObject" />
-          </ion-thumbnail>
-          <ion-label>Globo de Deadpool</ion-label>
-        </ion-item>
-
-        <ion-item lines="none">
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://ucs-images.fortnite.com/blobs/af/15/845b-3a79-40ff-bf53-0384efa33d47?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2SBBZFECCYQWRK6G%2F20240924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240924T020603Z&X-Amz-Expires=90000&X-Amz-Signature=45ec3d2f00cadf6a6d0953ac4895ee0012ecfe684f66fa7671ca68cb34637b19&X-Amz-SignedHeaders=host&response-content-disposition=inline%3Bfilename%3D%22file.png%22%3Bfilename%2A%3DUTF-8%27%27input-lg.png&x-id=GetObject" />
-          </ion-thumbnail>
-          <ion-label>Bajo de DP</ion-label>
-        </ion-item>
-
-      </ion-list>
-
-    </ion-card-content>
-
-  </ion-card>
-
+      <ion-row>
+        <ion-col sizeMd="3" size="12" *ngFor="let item of seccion">
+          <ion-card>
+            <ion-row>
+              <ion-col size="6" *ngFor="let btw of item.brItems">
+                <ion-img [src]="btw.images.icon"></ion-img>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" *ngFor="let btw of item.brItems">
+                <ion-label>{{ btw.name }}</ion-label>
+              </ion-col>
+            </ion-row>
+            <div class="item-details">
+              <ion-label>Precio regular: {{ item.regularPrice }} V-Bucks</ion-label>
+              <p></p>
+              <ion-label>Precio final: {{ item.finalPrice }} V-Bucks </ion-label>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
 </ion-content>
