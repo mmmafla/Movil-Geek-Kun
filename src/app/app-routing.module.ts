@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'tab-componet',
     loadChildren: () => import('./pages/tab-componet/tab-componet.module').then( m => m.TabComponetPageModule)
   },
+  {
+    path: 'register-favorite',
+    loadChildren: () => import('./pages/register-favorite/register-favorite.module').then( m => m.RegisterFavoritePageModule)
+  },
 ];
 
 @NgModule({

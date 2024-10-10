@@ -25,15 +25,20 @@
   </ion-card>
 
   <div>
+
     <ion-grid>
+
       <ion-row>
+
         <ion-col sizeMd="3" size="12" *ngFor="let item of bundle">
-          <h1>{{ item.layout.name }}</h1>
+          <!-- bundle solo -->
+          <ion-card-title>{{ item.layout.name }}</ion-card-title>
           <ion-card>
             <ion-img [src]="item.bundle?.image"></ion-img>
             <ion-card-header>
               <ion-card-title>{{ item.bundle?.name }}</ion-card-title>
             </ion-card-header>
+            <ion-label>Precio final: {{ item.finalPrice }} V-Bucks </ion-label>
           </ion-card>
 
           <ion-row>
@@ -56,9 +61,12 @@
             </ion-col>
           </ion-row>
         </ion-col>
+
       </ion-row>
 
+      <!-- nose -->
       <ion-row>
+
         <ion-col sizeMd="3" size="12" *ngFor="let item of seccion">
           <ion-card>
             <ion-row>
@@ -78,8 +86,15 @@
             </div>
           </ion-card>
         </ion-col>
+
       </ion-row>
+
     </ion-grid>
+
   </div>
+
+  <!-- <> Botón para agregar favorito <> -->
+  <ion-button id="btn-add-fav" [routerLink]="['/register-favorite']"><ion-icon name="add"></ion-icon></ion-button>
+
  
 </ion-content>
