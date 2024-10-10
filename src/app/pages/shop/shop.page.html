@@ -52,9 +52,9 @@
                 <ion-card-content>
                   <ion-label>{{ btw.name }}</ion-label>
                   <div class="item-details">
-                    <ion-label>Precio regular: {{ item.regularPrice }} V-Bucks</ion-label>
+                    <ion-label>Precio regular: {{ btw.regularPrice }} V-Bucks</ion-label>
                     <p></p>
-                    <ion-label>Precio final: {{ item.finalPrice }} V-Bucks </ion-label>
+                    <ion-label>Precio final: {{ btw.finalPrice }} V-Bucks </ion-label>
                   </div>
                 </ion-card-content>
               </ion-card>
@@ -92,9 +92,5 @@
     </ion-grid>
 
   </div>
-
-  <!-- <> Botón para agregar favorito <> -->
-  <ion-button id="btn-add-fav" [routerLink]="['/register-favorite']"><ion-icon name="add"></ion-icon></ion-button>
-
  
 </ion-content>

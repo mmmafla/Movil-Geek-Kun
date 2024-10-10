@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { DbserviceService } from 'src/app/services/dbservice.service';
+import { DblocalService } from 'src/app/services/local-bd.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,48 +9,30 @@ import { DbserviceService } from 'src/app/services/dbservice.service';
 })
 export class SettingsPage {
 
-  favorite: any = [
-    {
-      name: "Nombre del objeto",
-      price: "Precio del objeto"
-    }
-  ]
+  favoritos: any = [];
+  name!: string;
+  number!: number;
 
+  constructor(private dbLocalService:DblocalService) { }
 
-
-  constructor(private router: Router, private serviceBD: DbserviceService) { }
-
-  ngOnInit() {
-
-    this.serviceBD.dbState().subscribe((res: any) =>{
-      if(res){
-        this.serviceBD.fetchFavorite().subscribe((item: any) =>{
-          this.favorite = item;
-        })
-      }
-    });
-
+  guardar(){
+    console.log(this.name);
+    console.log(this.number);
+    
+    this.dbLocalService.guardarFavorito(this.name,this.number);
+    this.favoritos =(this.dbLocalService.mostrarBD());
+    console.log(this.favoritos);
   }
 
-  getItem($event: any) {
-    const valor = $event.target.value;
-    console.log('valor del control: ' + valor);
+  eliminar(){
+    console.log(this.number);    
+    this.dbLocalService.quitarFavorito(this.number);
+    this.favoritos =(this.dbLocalService.mostrarBD());
   }
-
-  edit(item: any) {
-    let navigationextras: NavigationExtras = {
-      state : {
-        idSend : item.id,
-        nameSend : item.name,
-        priceSend : item.price
-      }
-    }
-    this.router.navigate(['/tab-componet/settings'],navigationextras);
-  }
-
-  delete(item: any) {
-    this.serviceBD.deleteFavorite(item.id);
-    this.serviceBD.presentToast("Objeto eliminado");
+  
+  borrarBD(){
+    this.dbLocalService.borrarBD();
+    this.favoritos =(this.dbLocalService.mostrarBD());
   }
 
 }
