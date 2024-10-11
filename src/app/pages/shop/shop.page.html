@@ -92,5 +92,14 @@
     </ion-grid>
 
   </div>
+
+  <ion-card id="card-pers">
+    <ion-card-content>
+      <ion-input id="inp-name" type="text" placeholder="Ingrese articulo" [(ngModel)]="name"></ion-input>
+      <ion-input id="inp-id" type="number" placeholder="Ingrese ID" [(ngModel)]="number"></ion-input>
+    </ion-card-content>  
+  </ion-card>
+
+  <ion-button id="btn-add" (click)="guardar()" [routerLink]="['/tab-componet/settings']"><ion-icon name="add"></ion-icon></ion-button>
  
 </ion-content>

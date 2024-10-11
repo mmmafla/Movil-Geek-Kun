@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FortniteShopApiService } from 'src/app/services/fortnite-shop-api.service';
+import { DblocalService } from 'src/app/services/local-bd.service';
 
 @Component({
   selector: 'app-shop',
@@ -9,13 +10,25 @@ import { FortniteShopApiService } from 'src/app/services/fortnite-shop-api.servi
 
 export class ShopPage implements OnInit {
 
+  favoritos: any = [];
+  name!: string;
+  number!: number;
+
   shopItems: any[]=[]; 
   bundle: any[] = [];
   seccion: any [] = [];
   btr: any [] = [];
   jam: any [] = [];
 
-  constructor(private fortniteShopApiService: FortniteShopApiService) { }
+  constructor(private fortniteShopApiService: FortniteShopApiService, private dbLocalService:DblocalService) { }
+
+  guardar(){
+    console.log(this.name);
+    console.log(this.number);
+    this.dbLocalService.guardarFavorito(this.name,this.number);
+    this.favoritos =(this.dbLocalService.mostrarBD());
+    console.log(this.favoritos);
+  }
 
   ngOnInit() {
 

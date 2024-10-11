@@ -28,16 +28,15 @@
   </ion-list>
 
   <ion-card>
-    <ion-input type="text" placeholder="Ingrese Nombre" [(ngModel)]="name"></ion-input>
-    <ion-input type="number" placeholder="Ingrese Número" [(ngModel)]="number"></ion-input>
-    <ion-button shape="block" (click)="guardar()">Guardar en BD</ion-button>   
-    <ion-button shape="block" (click)="eliminar()">Eliminar un N° de la BD</ion-button>  
-    <ion-button shape="block" (click)="borrarBD()">Eliminar BD</ion-button> 
+    <ion-input type="number" placeholder="Ingrese Número" [(ngModel)]="number"></ion-input>   
+    <ion-button shape="block" (click)="eliminar()">Eliminar ID del articulo</ion-button>  
+    <ion-button shape="block" (click)="borrarBD()">Eliminar lista de favoritos</ion-button>
+    <ion-button shape="block" (click)="mostrarBD()">Abrir lista de favoritos</ion-button> 
     <ion-list>
       <ion-item-sliding *ngFor="let item of favoritos.__zone_symbol__value">
         <ion-item>
           <ion-avatar>
-            <img alt="Contacto" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="" src="https://img.icons8.com/?size=512&id=p6iYcd56bUym&format=png" />
           </ion-avatar>
           <ion-label>
             <!--word-wrap para los cortes entre palabras  white-space para que aparezca todo el texto en varias lineas y no se corte-->

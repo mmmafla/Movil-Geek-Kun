@@ -1,7 +1,7 @@
 ion-content {
     --background: var(--dark-mode-backgound-color);
 }
-#btn-add-fav {
+#btn-add {
     --background: var(--primary-color);
     --color: black;
     --border-radius: 25%;
@@ -11,4 +11,10 @@ ion-content {
 }
 #btn-icon {
     --color: var(--primary-color);
+}
+#card-pers {
+    --border-radius: 25%;
+    position: fixed;
+    bottom: 0.2rem;
+    right: 0.2rem;
 }

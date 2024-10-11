@@ -35,4 +35,8 @@ export class SettingsPage {
     this.favoritos =(this.dbLocalService.mostrarBD());
   }
 
+  mostrarBD() {
+    this.favoritos =(this.dbLocalService.mostrarBD());
+  }
+
 }
