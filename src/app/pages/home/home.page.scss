@@ -1,7 +1,7 @@
-#background-app {
-    --background: url('/assets/img/fortnite_background_game.jpg') no-repeat center;
+ion-content {
+    --background: var(--dark-mode-backgound-color);
 }
-
-#btn-login, #btn-register {
-    --color: white;
+ion-button {
+    --color: var(--light-mode-backgound-color);
+    --background: var(--primary-color);
 }

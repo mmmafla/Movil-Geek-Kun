@@ -1,3 +1,7 @@
 ion-content {
-    --background: var(--light-mode-backgound-color);
+    --background: var(--dark-mode-backgound-color);
+}
+ion-button {
+    --color: var(--light-mode-backgound-color);
+    --background: var(--primary-color);
 }

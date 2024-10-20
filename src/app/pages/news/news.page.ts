@@ -1,6 +1,5 @@
 import { Component, ViewChildren, ViewChild, ElementRef, OnInit, QueryList, } from '@angular/core';
 import { AnimationController, IonCard, Animation, IonContent } from '@ionic/angular';
-import { FortniteService  } from 'src/app/services/fortnite.service';
 
 @Component({
   selector: 'app-news',
@@ -13,25 +12,12 @@ export class NewsPage implements OnInit {
 
   @ViewChildren(IonCard, {read: ElementRef})
   cardElements!:QueryList<ElementRef<HTMLIonCardElement>>
-  
 
   private animation!:Animation;
 
-  newsItems: any[] = [];
-  
-  
-  constructor(private animationController: AnimationController, private fortniteService: FortniteService) { }
-  
+  constructor(private animationController: AnimationController) { }
+
   ngOnInit() {
-    this.fortniteService.getNews().subscribe(
-      response => {
-          this.newsItems = response.data.br.motds; // Asignamos la lista de noticias
-          console.log(this.newsItems); // Para depuración
-      },
-      error => {
-        console.error('Error al cargar las noticias', error);
-      }
-    );
   }
 
   ngAfterViewInit(){

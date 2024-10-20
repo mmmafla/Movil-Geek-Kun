@@ -106,22 +106,7 @@
 
   </ion-card>
 
-<ion-grid *ngFor="let item of newsItems">
-  <ion-card>
-    <ion-card-header>
-      <h6>{{ item.tabTitle }}</h6>
-        <ion-card-title>{{ item.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-        <ion-img [src]="item.image || 'assets/default-image.png'"></ion-img>
-        <div class="item-details">
-          <p>{{ item.body }}</p>
-        </div>
-    </ion-card-content>
-  </ion-card>
-</ion-grid>
-
-<!-- <> Botón para volver al encabezado de la vista <> -->
-<ion-button id="btn-scroll" (click)="scrollToTop()"><ion-icon name="arrow-up"></ion-icon></ion-button>
+  <!-- <> Botón para volver al encabezado de la vista <> -->
+  <ion-button id="btn-scroll" (click)="scrollToTop()"><ion-icon name="arrow-up"></ion-icon></ion-button>
 
 </ion-content>

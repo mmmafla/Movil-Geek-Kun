@@ -11,8 +11,8 @@ import { ToastController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   login:any={
-    user:"",
-    password:""
+    Usuario:"",
+    Contrasena:""
   }
 
   field:string="";
