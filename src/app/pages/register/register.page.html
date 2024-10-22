@@ -22,30 +22,47 @@
 
     <ion-card-content>
 
+      <ion-avatar *ngIf="form.value.imagen">
+        <img [src]="form.value.imagen" alt="">
+      </ion-avatar>
+
+      <ion-icon class="image-icon" *ngIf="!form.value.imagen" name="image-outline"></ion-icon>
+      <br>
+
+      <ion-button (click)="takeImage()" class="box-shadow" shape="round" size="small">Cambiar Foto</ion-button>
+
       <ion-item> <!-- <> Campo de dato: Nombre <> -->
-        <ion-input label="Nombre" labelPlacement="floating" [(ngModel)]="register.Nombre"></ion-input>
+        <ion-input label="Nombre" labelPlacement="floating"></ion-input>
       </ion-item>
 
       <ion-item> <!-- <> Campo de dato: Apellido <> -->
-        <ion-input label="Apellido" labelPlacement="floating" [(ngModel)]="register.Apellido"></ion-input>
+        <ion-input label="Apellido" labelPlacement="floating"></ion-input>
       </ion-item>
 
       <ion-item> <!-- <> Campo de dato: Usuario <> -->
-        <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="register.Usuario"></ion-input>
+        <ion-input label="Usuario" labelPlacement="floating"></ion-input>
       </ion-item>
 
       <ion-item> <!-- <> Campo de dato: Correo <> -->
-        <ion-input label="Correo" labelPlacement="floating" [(ngModel)]="register.Correo"></ion-input>
+        <ion-input label="Correo" labelPlacement="floating"></ion-input>
       </ion-item>
 
       <ion-item> <!-- <> Campo de dato: Contraseña <> -->
-        <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="register.Contrasena"></ion-input>
+        <ion-input label="Contraseña" labelPlacement="floating" type="password"></ion-input>
       </ion-item>
+
+      <!-- 
+      [(ngModel)]="register.Nombre"
+      [(ngModel)]="register.Apellido"
+      [(ngModel)]="register.Usuario"
+      [(ngModel)]="register.Correo"
+      [(ngModel)]="register.Contrasena"
+      -->
 
     </ion-card-content>
 
     <!-- <> Botón para registrarse <> -->
-    <ion-button expand="block" (click)="registrar()">Registrarse</ion-button>
+    <ion-button expand="block" [routerLink]="['/tab-componet/news']">Registrarse</ion-button>
 
   </ion-card>
 
