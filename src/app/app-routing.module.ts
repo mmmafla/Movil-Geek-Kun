@@ -27,8 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule),
-    canActivate : [AuthGuard]
+    loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
   },
   {
     path: 'shop',
@@ -49,6 +48,15 @@ const routes: Routes = [
   {
     path: 'tab-componet',
     loadChildren: () => import('./pages/tab-componet/tab-componet.module').then( m => m.TabComponetPageModule)
+  },
+  {
+    path: 'e404',
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'e404',
+    pathMatch: 'full'
   },
 ];
 
