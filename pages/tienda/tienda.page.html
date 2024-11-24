@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Artículos de la Tienda
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of filteredItems">
+        <ion-card>
+          <!-- Imagen del artículo -->
+          <ion-card-header>
+            <ion-card-title>{{ item.bundle.name }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <!-- Imagen del artículo -->
+            <ion-img [src]="item.bundle?.image || 'assets/default-image.png'"></ion-img>
+
+            <!-- Información del artículo -->
+            <div class="item-details">
+              <p>Precio regular: {{ item.regularPrice }} V-Bucks</p>
+              <p>Precio final: {{ item.finalPrice }} V-Bucks</p>
+            </div>
+            
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

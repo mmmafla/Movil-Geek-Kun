@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-title>Registrar favorito</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-title>Ingrese nombre y precio</ion-card-title>      
+    </ion-card-header>
+    
+    <ion-card-content>
+
+      <ion-item>
+        <!-- <> Campo de dato: Usuario <> -->
+        <ion-input label="Nombre" labelPlacement="floating" [(ngModel)]="nameFavorite"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <!-- <> Campo de dato: Contraseña <> -->
+        <ion-input label="Precio" labelPlacement="floating" [(ngModel)]="priceFavorite"></ion-input>
+      </ion-item>
+
+      <!-- <> Botones con sus respectivas opcines <> -->
+      <ion-button expand="block" (click)="saveFavorite()">Agregar</ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
