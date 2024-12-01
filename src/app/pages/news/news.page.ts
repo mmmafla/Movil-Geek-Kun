@@ -1,5 +1,6 @@
 import { Component, ViewChildren, ViewChild, ElementRef, OnInit, QueryList, } from '@angular/core';
 import { AnimationController, IonCard, Animation, IonContent } from '@ionic/angular';
+import { FortniteShopApiService } from 'src/app/services/fortnite-shop-api.service';
 
 @Component({
   selector: 'app-news',
@@ -14,12 +15,16 @@ export class NewsPage implements OnInit {
   cardElements!:QueryList<ElementRef<HTMLIonCardElement>>
 
   private animation!:Animation;
+  newsItems: any[] = [];
 
-  constructor(private animationController: AnimationController) { }
+  constructor(private fortniteShopApiService: FortniteShopApiService,private animationController: AnimationController) { }
 
   ngOnInit() {
+    this.fortniteShopApiService.getNews().subscribe((data: any) =>{
+      this.newsItems = data.data.br.motds;
+      console.log(this.newsItems);
+  })
   }
-
   ngAfterViewInit(){
     const firstNews = this.animationController
       .create()

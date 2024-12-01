@@ -20,29 +20,6 @@ export class ShopPage implements OnInit {
 
   constructor(private fortniteShopApiService: FortniteShopApiService, private dbLocalService:DblocalService) { }
 
-  guardar(){
-    console.log(this.name);
-    console.log(this.number);
-    this.dbLocalService.guardarFavorito(this.name,this.number);
-    this.favoritos =(this.dbLocalService.mostrarBD());
-    console.log(this.favoritos);
-  }
-  getBackgroundImage(colors: { color1?: string, color2?: string, color3?: string }): string {
-    if (colors.color1 && colors.color2 && colors.color3) {
-      return `linear-gradient(to bottom, #${colors.color1}, #${colors.color2}, #${colors.color3})`;
-    } else if (colors.color1 && colors.color3) {
-      return `linear-gradient(to bottom, #${colors.color1}, #${colors.color3})`;
-    } else if (colors.color1) {
-      return `#${colors.color1}`;
-    } else if (colors.color3) {
-      return `#${colors.color3}`;
-    } else {
-      return '#FFFFFF';  // Color por defecto si no hay colores
-    }
-  }
-  
-
-
   ngOnInit() {
 
     this.fortniteShopApiService.getShopItems().subscribe((data: any) =>{
@@ -64,6 +41,30 @@ export class ShopPage implements OnInit {
     });
 
   }
+  
+  guardar(){
+    console.log(this.name);
+    console.log(this.number);
+    this.dbLocalService.guardarFavorito(this.name,this.number);
+    this.favoritos =(this.dbLocalService.mostrarBD());
+    console.log(this.favoritos);
+  }
 
+getBackgroundImage(colors: { color1?: string, color2?: string, color3?: string }): string {
+    if (colors.color1 && colors.color2 && colors.color3) {
+      return `linear-gradient(to bottom, #${colors.color1}, #${colors.color2}, #${colors.color3})`;
+    } else if (colors.color1 && colors.color3) {
+      return `linear-gradient(to bottom, #${colors.color1}, #${colors.color3})`;
+    } else if (colors.color1) {
+      return `#${colors.color1}`;
+    } else if (colors.color3) {
+      return `#${colors.color3}`;
+    } else {
+      return '#FFFFFF';  // Color por defecto si no hay colores
+    }
+  }
+
+
+  
 }
 

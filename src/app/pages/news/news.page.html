@@ -23,7 +23,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <ion-card>
     <div class="card-background" #homeCardBg></div>
     <img alt="" src="https://pbs.twimg.com/media/GYFffiKWkAANbwJ?format=jpg&name=900x900" />
@@ -39,71 +38,20 @@
     </ion-card-content>
 
   </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GYCiUeJXcAA5viV?format=jpg&name=900x900" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>Septiembre 21, 2024</ion-card-subtitle>
-    </ion-card-header>
   
-    <ion-card-content>
-      ¡Mastica esto!
-      Espera, no, no literalmente. Por favor, no muerdas al oso.
-      Líder del equipo golosina ya está a la venta: http://fn.gg/GummiTeamLeader
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GYAw6XYWEAA7ZKc?format=jpg&name=small" />
-
+  <ion-card *ngFor="let item of newsItems">
+    <div class="card-background" #homeCardBg></div>
     <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>Septiembre 21, 2024</ion-card-subtitle>
+      <h6>{{ item.tabTitle }}</h6>
+      <ion-card-title>{{ item.title}}</ion-card-title>
     </ion-card-header>
-  
     <ion-card-content>
-      ¡Empezamos! La Copa de Ídolos de Rubius ya está en marcha.
-      Reglas: http://fn.gg/RubiusIconCup-Rules
-      Detalles: http://fn.gg/RubiusIconCup
+      <ion-img [src]="item.image || 'assets/default-image.png'"></ion-img>
+      <div class="item-details">
+        <br>
+        <p>{{ item.body }}</p>
+      </div>
     </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GX9YPUQWkAAEMhW?format=jpg&name=900x900" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>Septiembre 20, 2024</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Siempre atento a lo último sobre cierto Lanzatelarañas . 
-      El Kit LEGO de El Clarín ya está disponible en la Tienda: https://fn.gg/TheDailyBugle
-    </ion-card-content>
-
-  </ion-card>
-
-  <ion-card>
-
-    <img alt="" src="https://pbs.twimg.com/media/GX80-vtXkAATeAW?format=jpg&name=900x900" />
-
-    <ion-card-header>
-      <ion-card-title>Fortnite</ion-card-title>
-      <ion-card-subtitle>Septiembre 20, 2024</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Con el lanzamiento de un nuevo parche en Xbox Series X, 
-      los problemas de estabilidad se han resuelto y vuelven a la normalidad. ¡Nos vemos en el juego!
-    </ion-card-content>
-
   </ion-card>
 
   <!-- <> Botón para volver al encabezado de la vista <> -->
