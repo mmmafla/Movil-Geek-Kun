@@ -1,0 +1,27 @@
+.image-icon {
+    font-size: 100px;
+    opacity: 30%;
+}
+
+ion-avatar {
+    width: 200px;
+    height: 160px;
+    --border-radius: 15px;
+    margin: 0 auto;
+}
+ion-card {
+    background: var(--color-dark);
+}
+ion-button {
+    --color: var(--color-light);
+    --background: var(--color-purple);
+    --border-color: var(--color-purple);
+}
+ion-content {
+    --background: var(--color-purple);
+}
+ion-fab-button {
+    --color: var(--color-light);
+    --background: var(--color-dark);
+    --border-color: var(--color-dark);
+}
